@@ -50,7 +50,8 @@ curl --location --request POST 'http://52.221.228.196:3030/users/login' \
     }
 }
 ```
-
+## Get CLIENT_ID and CLIENT_SECRET
+![alt text](site-profiling-api.png)
 
 ## HTTP Request Site Profilling
 ```URL
@@ -88,35 +89,49 @@ POST http://52.221.228.196:5030/api/v1.0/drivetime
 
 | tipe | feature properties |  Description  |
 | -------------|--- |--------------|
-|area| Household| |
-||age | |
-||demography | |
-|| driving_unit| |
-||durasi_distance | |
-||kabupaten | |
-||kecamatan | |
-||nama_desa | |
-||kodepodes | |
-||latitude | |
-||longitude | |
-||luas_m | |
-||poi | |
-||provinsi | |
-||ses | |
-||tipe_driving | |
-||zone | |
+|area| Household| jumlah KK|
+||age |jumlah orang setiap golongan umur |
+||demography | jumlah orang berdasarkan jenis kelamin|
+|| driving_unit|satuan jarah isochrones |
+||durasi_distance | waktu tempuh jarak isochrones |
+||kabupaten |nama kabupaten|
+||kecamatan | nama kecamatan|
+||nama_desa | namadesa|
+||kodepodes | kode podes|
+||latitude | latitude titik tengah|
+||longitude | longitude titik tengah|
+||luas_m | luas isochrones|
+||poi | statistik POI di dalan ishochrones|
+||provinsi | nama provinsi|
+||ses | statistik SES|
+||tipe_driving | jenis isochrones|
+||zone | peraturan zonasi di dalan izochrones|
+|point|alamat_merchant|alamat dari POI|
+|| developer_name| nama developer dari POI, `null` apabila tidak ada informasi|
+|| dist| jarak POI dari titik tengah|
+|| id_brand| id brad dari POI|
+||id_merchant |id dari POI |
+||kode_brand|kode brand POI |
+||kode_kategori |kode kategori POI |
+||kode_sub_kategori |kode sub kategori POI |
+||latitude | latitude dari POI|
+||longitude |longitude dari POI |
+||nama_brand | nama brand POI|
+|| nama_merchant| nama POI|
+||number_of_parking | jumlah tempat parkir di POI,  `null` apabila tidak ada informasi |
+|| parking_fees|harga parkir di POI,  `null` apabila tidak ada|
+||phone_merchant | nomor telepon POI,  `null` apabila tidak ada|
+||subclass | nama sub kelas dari POI |
 
 
-|point|area |isochrones dan informasi areanya|
-
-
+### Example
 
 #### Request
 ```json
 curl --location --request POST 'http://52.221.228.196:5030/api/v1.0/drivetime' \
---header 'client_id: $CLIENT_ID' \
---header 'client_secret: $CLIENT_SCRET' \
---header 'Authorization: $AUTHORIZATION' \
+--header 'client_id: '$CLIENT_ID'' \
+--header 'client_secret: '$CLIENT_SCRET'' \
+--header 'Authorization: '$AUTHORIZATION'' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "coordinate": [
@@ -130,7 +145,33 @@ curl --location --request POST 'http://52.221.228.196:5030/api/v1.0/drivetime' \
 }'
 ```
 #### Response
+<details>
+<summary>
+
 ```json
+{
+    "Site 1": {
+        "area": {
+            "10": {
+                "features": [
+                    {
+                        "geometry": {
+                            "coordinates": [
+                                [
+                                    [
+                                        106.862566,
+                                        -6.172418
+                                    ],
+                                    [
+                                        106.863222,
+                                        -6.170092
+```
+
+</summary>
+
+```json
+
+
 {
     "Site 1": {
         "area": {
@@ -2322,3 +2363,5 @@ curl --location --request POST 'http://52.221.228.196:5030/api/v1.0/drivetime' \
     }
 }
 ```
+
+</details>
