@@ -129,9 +129,9 @@ POST http://52.221.228.196:5030/api/v1.0/drivetime
 #### Request
 ```json
 curl --location --request POST 'http://52.221.228.196:5030/api/v1.0/drivetime' \
---header 'client_id: '$CLIENT_ID'' \
---header 'client_secret: '$CLIENT_SCRET'' \
---header 'Authorization: '$AUTHORIZATION'' \
+--header 'client_id: $CLIENT_ID' \
+--header 'client_secret: $CLIENT_SCRET' \
+--header 'Authorization: $AUTHORIZATION' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "coordinate": [
