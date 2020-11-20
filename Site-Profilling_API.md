@@ -62,9 +62,9 @@ POST http://52.221.228.196:5030/api/v1.0/drivetime
 
 | Parameters    |               | Description  |
 | ------------- |:-------------:| -------------|
-| client_id   | required	  	|  'client_id' di dapat dari mendaftarkan aplikasi di superadmin	   |
-| client_secret  | required	  	|  'client_secret' di dapat dari mendaftarkan aplikasi di superadmin 	   |
-| Authorization   | required	  	|  'Authorization' didapatkan dengan cara login  	   |
+| client_id   | required	  	|  `client_id` di dapat dari mendaftarkan aplikasi di superadmin	   |
+| client_secret  | required	  	|  `client_secret` di dapat dari mendaftarkan aplikasi di superadmin 	   |
+| Authorization   | required	  	|  `Authorization` didapatkan dengan cara login  	   |
 
 
 #### Parameters
