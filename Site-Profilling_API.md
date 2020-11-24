@@ -50,8 +50,7 @@ curl --location --request POST 'http://52.221.228.196:3030/users/login' \
     }
 }
 ```
-## Get CLIENT_ID and CLIENT_SECRET
-![alt text](site-profiling-api.png)
+
 
 ## HTTP Request Site Profilling
 ```URL
