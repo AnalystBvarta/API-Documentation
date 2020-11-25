@@ -41,7 +41,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://52.221.228.196:5030/api/v1.0/drivetime",
+					"raw": "http://ALBSiteClient-1530194231.ap-southeast-1.elb.amazonaws.com/api/v1.0/drivetime",
 					"protocol": "http",
 					"host": [
 						"52",
