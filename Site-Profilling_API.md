@@ -138,7 +138,7 @@ curl --location --request POST 'http://52.221.228.196:5030/api/v1.0/drivetime' \
 --data-raw '{
     "coordinate": [
         {
-            "name": "Site 1",
+            "name": "Gading Serpong",
             "coordinate": [
                106.628007,-6.246553 //gading serpong
             ]
