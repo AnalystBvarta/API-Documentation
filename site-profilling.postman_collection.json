@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "b7aa0ca4-b5a9-4a69-b049-836f7763fb86",
+		"name": "catcment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/api/v1.0/drivetime",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "a eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbmlzdHJhdG9yIiwicm9sZSI6eyJpZCI6MiwicGVybWlzc2lvbnMiOm51bGwsImRlc2NyaXB0aW9uIjoic2FtcGxlIGRlc2MgTWFpbnRlbmVycyIsIm5hbWUiOiJNYWludGVuZXJzIiwic2x1ZyI6Im1haW50ZW5lcnMiLCJjcmVhdGVkX2F0IjpudWxsLCJ1cGRhdGVkX2F0IjpudWxsLCJkZWxldGVkX2F0IjpudWxsLCJ1cGRhdGVkX2J5IjpudWxsLCJjcmVhdGVkX2J5IjpudWxsLCJkZWxldGVkX2J5IjpudWxsfSwidXNlcnNHcm91cCI6eyJpZCI6MSwic2x1ZyI6Imphbmppd2EiLCJncm91cF9uYW1lIjoiSmFuamlKaXdhIiwic3RhdHVzX2RhdGEiOiJlbmFibGVkIiwiY3JlYXRlZF9hdCI6bnVsbCwidXBkYXRlZF9hdCI6bnVsbCwiY3JlYXRlZF9ieSI6bnVsbCwidXBkYXRlZF9ieSI6bnVsbH0sImlhdCI6MTYwMTg3MjYzNSwiZXhwIjoxNjAxODgzNDM1fQ.Na565DDPcEFSCEfNny8fQuhEn1HvhnbvMcJ3AKCvpGs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"coordinate\": [\r\n        {\r\n            \"name\": \"Site 1\",\r\n            \"coordinate\": [\r\n                106.8240051,-6.1639545\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1.0/drivetime",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1.0",
+						"drivetime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/v1.0/drivetime Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "s eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbmlzdHJhdG9yIiwicm9sZSI6eyJpZCI6MiwicGVybWlzc2lvbnMiOm51bGwsImRlc2NyaXB0aW9uIjoic2FtcGxlIGRlc2MgTWFpbnRlbmVycyIsIm5hbWUiOiJNYWludGVuZXJzIiwic2x1ZyI6Im1haW50ZW5lcnMiLCJjcmVhdGVkX2F0IjpudWxsLCJ1cGRhdGVkX2F0IjpudWxsLCJkZWxldGVkX2F0IjpudWxsLCJ1cGRhdGVkX2J5IjpudWxsLCJjcmVhdGVkX2J5IjpudWxsLCJkZWxldGVkX2J5IjpudWxsfSwidXNlcnNHcm91cCI6eyJpZCI6MSwic2x1ZyI6Imphbmppd2EiLCJncm91cF9uYW1lIjoiSmFuamlKaXdhIiwic3RhdHVzX2RhdGEiOiJlbmFibGVkIiwiY3JlYXRlZF9hdCI6bnVsbCwidXBkYXRlZF9hdCI6bnVsbCwiY3JlYXRlZF9ieSI6bnVsbCwidXBkYXRlZF9ieSI6bnVsbH0sImlhdCI6MTYwMDQzMjU1NywiZXhwIjoxNjAwNDQzMzU3fQ.rRMUnuuRjPhgzGzNjCgu0ApB-TP2J_REq0bZclBn_-M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"coordinate\": [\r\n    {\r\n      \"name\": \"Place A\",\r\n      \"coordinate\": [\r\n        107.142275,-6.827417\r\n      ]\r\n    }\r\n  ],\r\n  \"mode\": \"isochrones\",\r\n  \"profile\": \"foot-walking\",\r\n  \"time\": [\r\n    300\r\n  ],\r\n  \"distance\": [\r\n    500,1000,1500\r\n  ],\r\n  \"drive_base\": \"distance\",\r\n  \"selected\": \"poi\",\r\n  \"poi\": [\r\n    \"6575\",\r\n    \"6589\"\r\n  ],\r\n  \"param\": {\r\n    \"id_parameter\": 334,\r\n    \"name\": \"Parameter Baru\",\r\n    \"demography\": \"gender-age\",\r\n    \"gender\": \"both\",\r\n    \"parameter_for_user\": \"46\",\r\n    \"created_at\": \"2020-08-10T10:34:30.000Z\",\r\n    \"updated_at\": \"2020-08-17T07:51:51.000Z\",\r\n    \"created_by\": 46,\r\n    \"updated_by\": null,\r\n    \"social_economic_status\": [\r\n      {\r\n        \"id_ses\": 996,\r\n        \"type\": \"low\",\r\n        \"id_parameter\": 334\r\n      },\r\n      {\r\n        \"id_ses\": 997,\r\n        \"type\": \"high\",\r\n        \"id_parameter\": 334\r\n      }\r\n    ],\r\n    \"age_range\": [\r\n      {\r\n        \"id_age_range\": 1518,\r\n        \"id_parameter\": 334,\r\n        \"name_type\": \"kids\",\r\n        \"age\": \"5\"\r\n      },\r\n      {\r\n        \"id_age_range\": 1519,\r\n        \"id_parameter\": 334,\r\n        \"name_type\": \"teen\",\r\n        \"age\": \"10\"\r\n      },\r\n      {\r\n        \"id_age_range\": 1520,\r\n        \"id_parameter\": 334,\r\n        \"name_type\": \"teen\",\r\n        \"age\": \"15\"\r\n      },\r\n      {\r\n        \"id_age_range\": 1521,\r\n        \"id_parameter\": 334,\r\n        \"name_type\": \"mature\",\r\n        \"age\": \"40\"\r\n      }\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1.0/drivetime",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1.0",
+						"drivetime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://52.221.228.196:3030/users/login Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email_username\" : \"administrator\",\n\t\"password\" : \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://52.221.228.196:3030/users/login",
+					"protocol": "http",
+					"host": [
+						"52",
+						"221",
+						"228",
+						"196"
+					],
+					"port": "3030",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

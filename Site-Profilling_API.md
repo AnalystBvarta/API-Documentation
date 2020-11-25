@@ -1,5 +1,8 @@
 # API Site Profilling
 
+#### Postman
+<a href="site-profilling.postman_collection.json" download>Download Postman Collection</a>
+
 ## HTTP Request Login
 ```URL
 POST http://52.221.228.196:3030/users/login
@@ -50,8 +53,7 @@ curl --location --request POST 'http://52.221.228.196:3030/users/login' \
     }
 }
 ```
-## Get CLIENT_ID and CLIENT_SECRET
-![alt text](site-profiling-api.png)
+
 
 ## HTTP Request Site Profilling
 ```URL
@@ -62,8 +64,8 @@ POST http://52.221.228.196:5030/api/v1.0/drivetime
 
 | Parameters    |               | Description  |
 | ------------- |:-------------:| -------------|
-| client_id   | required	  	|  `client_id` di dapat dari mendaftarkan aplikasi di superadmin	   |
-| client_secret  | required	  	|  `client_secret` di dapat dari mendaftarkan aplikasi di superadmin 	   |
+| client_id   | required	  	|  `431322697`	   |
+| client_secret  | required	  	|  `U2FsdGVkX19cQ7QtXcaKmNAUxPltu1ct/e2li65h64aNEfPCXsIwJo+Tg48NNAIh2LF+binkHw9HHsjTntgoYvlPzSlOthlUKawuX6xYWM9ptUKeL0xmR3kwtUDvjSSN`  	   |
 | Authorization   | required	  	|  `Authorization` didapatkan dengan cara login  	   |
 
 
@@ -138,7 +140,7 @@ curl --location --request POST 'http://52.221.228.196:5030/api/v1.0/drivetime' \
         {
             "name": "Site 1",
             "coordinate": [
-               106.9012153,-6.1587788
+               106.628007,-6.246553 //gading serpong
             ]
         }
     ]
