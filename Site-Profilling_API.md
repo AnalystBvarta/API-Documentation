@@ -141,7 +141,7 @@ curl --location --request POST 'http://ALBSiteClient-1530194231.ap-southeast-1.e
         {
             "name": "Gading Serpong",
             "coordinate": [
-               106.628007,-6.246553 //gading serpong
+               106.628007,-6.246553
             ]
         }
     ]
