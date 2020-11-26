@@ -5,7 +5,7 @@
 
 ## HTTP Request Login
 ```URL
-POST http://52.221.228.196:3030/users/login
+POST http://ALBApiAuthV2-606248699.ap-southeast-1.elb.amazonaws.com/users/login
 ```
 
 
@@ -31,7 +31,7 @@ POST http://52.221.228.196:3030/users/login
 
 #### Request
 ```json
-curl --location --request POST 'http://52.221.228.196:3030/users/login' \
+curl --location --request POST 'http://ALBApiAuthV2-606248699.ap-southeast-1.elb.amazonaws.com/users/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 	"email_username" : $USERNAME,
