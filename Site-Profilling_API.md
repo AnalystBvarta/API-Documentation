@@ -5,7 +5,7 @@
 
 ## HTTP Request Login
 ```URL
-POST http://52.221.228.196:3030/users/login
+POST http://ALBApiAuthV2-606248699.ap-southeast-1.elb.amazonaws.com/users/login
 ```
 
 
@@ -31,7 +31,7 @@ POST http://52.221.228.196:3030/users/login
 
 #### Request
 ```json
-curl --location --request POST 'http://52.221.228.196:3030/users/login' \
+curl --location --request POST 'http://ALBApiAuthV2-606248699.ap-southeast-1.elb.amazonaws.com/users/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 	"email_username" : $USERNAME,
@@ -57,7 +57,7 @@ curl --location --request POST 'http://52.221.228.196:3030/users/login' \
 
 ## HTTP Request Site Profilling
 ```URL
-POST http://52.221.228.196:5030/api/v1.0/drivetime
+POST http://ALBSiteClient-1530194231.ap-southeast-1.elb.amazonaws.com/api/v1.0/drivetime
 ```
 
 #### Header
@@ -131,7 +131,7 @@ POST http://52.221.228.196:5030/api/v1.0/drivetime
 
 #### Request
 ```json
-curl --location --request POST 'http://52.221.228.196:5030/api/v1.0/drivetime' \
+curl --location --request POST 'http://ALBSiteClient-1530194231.ap-southeast-1.elb.amazonaws.com/api/v1.0/drivetime' \
 --header 'client_id: 431322697' \
 --header 'client_secret: U2FsdGVkX19cQ7QtXcaKmNAUxPltu1ct/e2li65h64aNEfPCXsIwJo+Tg48NNAIh2LF+binkHw9HHsjTntgoYvlPzSlOthlUKawuX6xYWM9ptUKeL0xmR3kwtUDvjSSN' \
 --header 'Authorization: $AUTHORIZATION' \
