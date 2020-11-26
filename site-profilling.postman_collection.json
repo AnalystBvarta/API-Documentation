@@ -81,7 +81,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://ALBApiAuthV2-606248699.ap-southeast-1.elb.amazonaws.com/users/login",
+					"raw": "http://52.221.228.196:3030/users/login",
 					"protocol": "http",
 					"host": [
 						"52",
