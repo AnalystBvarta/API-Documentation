@@ -41,7 +41,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://ALBSiteClient-1530194231.ap-southeast-1.elb.amazonaws.com/api/v1.0/drivetime",
+					"raw": "http://52.221.228.196:5030/api/v1.0/drivetime",
 					"protocol": "http",
 					"host": [
 						"52",
@@ -81,7 +81,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://ALBApiAuthV2-606248699.ap-southeast-1.elb.amazonaws.com/users/login",
+					"raw": "http://52.221.228.196:3030/users/login",
 					"protocol": "http",
 					"host": [
 						"52",
