@@ -69,6 +69,17 @@
 						"name": "Content-Type",
 						"type": "text",
 						"value": "application/json"
+						
+					},
+					{
+						"key": "client_id",
+						"value": "431322697",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "U2FsdGVkX19cQ7QtXcaKmNAUxPltu1ct/e2li65h64aNEfPCXsIwJo+Tg48NNAIh2LF+binkHw9HHsjTntgoYvlPzSlOthlUKawuX6xYWM9ptUKeL0xmR3kwtUDvjSSN",
+						"type": "text"
 					}
 				],
 				"body": {

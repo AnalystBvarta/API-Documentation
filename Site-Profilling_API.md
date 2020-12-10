@@ -3,11 +3,19 @@
 #### Postman
 <a href="site-profilling.postman_collection.json" download>Download Postman Collection</a>
 
+#### API Swagger
+<a href="https://siteprofillingclient.lokasiintelligence.com/api/doc" download>API Documentation Swagger</a>
+
 ## HTTP Request Login
 ```URL
 POST https://authclient.lokasiintelligence.com/users/login
 ```
+#### Header
 
+| Parameters    |               | Description  |
+| ------------- |:-------------:| -------------|
+| client_id   | required	  	|  `431322697`	   |
+| client_secret  | required	  	|  `U2FsdGVkX19cQ7QtXcaKmNAUxPltu1ct/e2li65h64aNEfPCXsIwJo+Tg48NNAIh2LF+binkHw9HHsjTntgoYvlPzSlOthlUKawuX6xYWM9ptUKeL0xmR3kwtUDvjSSN`  	   |
 
 #### Parameters
 
@@ -31,8 +39,10 @@ POST https://authclient.lokasiintelligence.com/users/login
 
 #### Request
 ```json
-curl --location --request POST 'https://authclient.lokasiintelligence.com/users/login' \
+curl --location --request POST 'http://authclient.lokasiintelligence.com/users/login' \
 --header 'Content-Type: application/json' \
+--header 'client_id: 431322697' \
+--header 'client_secret: U2FsdGVkX19cQ7QtXcaKmNAUxPltu1ct/e2li65h64aNEfPCXsIwJo+Tg48NNAIh2LF+binkHw9HHsjTntgoYvlPzSlOthlUKawuX6xYWM9ptUKeL0xmR3kwtUDvjSSN' \
 --data-raw '{
 	"email_username" : $USERNAME,
 	"password" : $PASSWORD
@@ -108,7 +118,11 @@ POST https://siteprofillingclient.lokasiintelligence.com/api/v1.0/drivetime
 ||ses | statistik SES|
 ||tipe_driving | jenis isochrones|
 ||zone | peraturan zonasi di dalan izochrones|
-|batas_informal||berisi geojson batas informal|
+|informal|provinsi|berisi informasi provinsi|
+||kab_kot|berisi informasi kabupaten/kota|
+||kecamtan|berisi informasi kecamatan|
+||informal|berisi informasi area informal dibawah kecamatan|
+||polygon|berisi geojson koordinat batas informal|
 |point|alamat_merchant|alamat dari POI|
 || developer_name| nama developer dari POI, `null` apabila tidak ada informasi|
 || dist| jarak POI dari titik tengah|
@@ -153,7 +167,7 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
 
 ```json
 {
-    "Site 1": {
+    "Gading Serpong": {
         "area": {
             "10": {
                 "features": [
@@ -162,12 +176,16 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                             "coordinates": [
                                 [
                                     [
-                                        106.862566,
-                                        -6.172418
+                                        106.60447,
+                                        -6.258654
                                     ],
                                     [
-                                        106.863222,
-                                        -6.170092
+                                        106.605525,
+                                        -6.25099
+                                    ],
+                                    [
+                                        106.605566,
+                                        -6.250803
 ```
 
 </summary>
@@ -185,172 +203,168 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                             "coordinates": [
                                 [
                                     [
-                                        106.603792,
-                                        -6.260451
+                                        106.60447,
+                                        -6.258654
                                     ],
                                     [
-                                        106.604879,
-                                        -6.252854
+                                        106.605525,
+                                        -6.25099
                                     ],
                                     [
-                                        106.605422,
-                                        -6.247857
+                                        106.605566,
+                                        -6.250803
                                     ],
                                     [
-                                        106.6055,
-                                        -6.247461
+                                        106.607563,
+                                        -6.242254
                                     ],
                                     [
-                                        106.606484,
-                                        -6.242779
+                                        106.60895,
+                                        -6.234161
                                     ],
                                     [
-                                        106.609044,
-                                        -6.233232
+                                        106.613268,
+                                        -6.226371
                                     ],
                                     [
-                                        106.611787,
-                                        -6.22585
+                                        106.614234,
+                                        -6.225935
                                     ],
                                     [
-                                        106.61447,
-                                        -6.223666
+                                        106.615989,
+                                        -6.225967
                                     ],
                                     [
-                                        106.618055,
-                                        -6.22399
+                                        106.616326,
+                                        -6.226006
                                     ],
                                     [
-                                        106.629509,
-                                        -6.224404
+                                        106.61782,
+                                        -6.226254
                                     ],
                                     [
-                                        106.630046,
-                                        -6.219998
+                                        106.624152,
+                                        -6.22909
                                     ],
                                     [
-                                        106.629751,
-                                        -6.218825
+                                        106.62439,
+                                        -6.229074
                                     ],
                                     [
-                                        106.628697,
-                                        -6.216707
+                                        106.630175,
+                                        -6.218563
                                     ],
                                     [
-                                        106.629273,
-                                        -6.214442
+                                        106.630389,
+                                        -6.217494
                                     ],
                                     [
-                                        106.6294,
-                                        -6.214364
+                                        106.630582,
+                                        -6.216239
                                     ],
                                     [
-                                        106.631517,
-                                        -6.214469
+                                        106.630736,
+                                        -6.216136
                                     ],
                                     [
-                                        106.635275,
-                                        -6.218309
+                                        106.632952,
+                                        -6.216272
                                     ],
                                     [
-                                        106.641493,
-                                        -6.227336
+                                        106.633037,
+                                        -6.216375
                                     ],
                                     [
-                                        106.640543,
-                                        -6.23049
+                                        106.639518,
+                                        -6.225113
                                     ],
                                     [
-                                        106.642191,
-                                        -6.241536
+                                        106.640089,
+                                        -6.230711
                                     ],
                                     [
-                                        106.643294,
-                                        -6.242192
+                                        106.643074,
+                                        -6.242228
                                     ],
                                     [
-                                        106.644837,
-                                        -6.244053
+                                        106.644864,
+                                        -6.244708
                                     ],
                                     [
-                                        106.646001,
-                                        -6.249967
+                                        106.645981,
+                                        -6.249904
                                     ],
                                     [
-                                        106.647198,
-                                        -6.260286
+                                        106.647137,
+                                        -6.259356
                                     ],
                                     [
-                                        106.647225,
-                                        -6.260546
+                                        106.647189,
+                                        -6.260136
                                     ],
                                     [
-                                        106.646093,
-                                        -6.270127
+                                        106.645797,
+                                        -6.271642
                                     ],
                                     [
-                                        106.645602,
-                                        -6.274481
+                                        106.644787,
+                                        -6.272131
                                     ],
                                     [
-                                        106.645581,
-                                        -6.274525
+                                        106.644726,
+                                        -6.272159
                                     ],
                                     [
-                                        106.635616,
-                                        -6.278154
+                                        106.63533,
+                                        -6.275316
                                     ],
                                     [
-                                        106.633715,
-                                        -6.278237
+                                        106.632782,
+                                        -6.276809
                                     ],
                                     [
-                                        106.63356,
-                                        -6.277951
+                                        106.632293,
+                                        -6.276081
                                     ],
                                     [
-                                        106.632525,
-                                        -6.275587
+                                        106.628816,
+                                        -6.270714
                                     ],
                                     [
-                                        106.630432,
-                                        -6.27289
+                                        106.620435,
+                                        -6.26988
                                     ],
                                     [
-                                        106.620957,
-                                        -6.269979
+                                        106.618207,
+                                        -6.270885
                                     ],
                                     [
-                                        106.617831,
-                                        -6.272543
+                                        106.616797,
+                                        -6.270683
                                     ],
                                     [
-                                        106.614329,
-                                        -6.271709
+                                        106.614677,
+                                        -6.270178
                                     ],
                                     [
-                                        106.614598,
-                                        -6.27058
+                                        106.615007,
+                                        -6.26853
                                     ],
                                     [
-                                        106.606919,
-                                        -6.262236
+                                        106.606156,
+                                        -6.260761
                                     ],
                                     [
-                                        106.605092,
-                                        -6.263088
+                                        106.605748,
+                                        -6.260634
                                     ],
                                     [
-                                        106.604878,
-                                        -6.263026
+                                        106.605654,
+                                        -6.260584
                                     ],
                                     [
-                                        106.604797,
-                                        -6.262868
-                                    ],
-                                    [
-                                        106.603792,
-                                        -6.260451
+                                        106.60447,
+                                        -6.258654
                                     ]
                                 ]
                             ],
@@ -358,136 +372,136 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                         },
                         "id": "0",
                         "properties": {
-                            "Household": "28,047",
+                            "Household": "25,948",
                             "age": {
                                 "0": {
-                                    "persen": 15.265430274199279,
+                                    "persen": 15.212101371471071,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 13134.0,
+                                    "total": 12124.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "10": {
-                                    "persen": 16.917034996266977,
+                                    "persen": 17.003826937163968,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 14555.0,
+                                    "total": 13552.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "15": {
-                                    "persen": 16.758964452846005,
+                                    "persen": 16.82816756797839,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 14419.0,
+                                    "total": 13412.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "20": {
-                                    "persen": 17.549317169950886,
+                                    "persen": 17.52327678604132,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 15099.0,
+                                    "total": 13966.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "25": {
-                                    "persen": 17.48887843276051,
+                                    "persen": 17.391532259152136,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 15047.0,
+                                    "total": 13861.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "30": {
-                                    "persen": 18.033989350881377,
+                                    "persen": 17.937331013407327,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 15516.0,
+                                    "total": 14296.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "35": {
-                                    "persen": 18.903377339696746,
+                                    "persen": 18.89718399502852,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 16264.0,
+                                    "total": 15061.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "40": {
-                                    "persen": 18.00376998228619,
+                                    "persen": 18.125537480391873,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 15490.0,
+                                    "total": 14446.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "45": {
-                                    "persen": 14.430910787609125,
+                                    "persen": 14.535812800106596,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 12416.0,
+                                    "total": 11585.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "5": {
-                                    "persen": 17.26223316829661,
+                                    "persen": 17.304957284339245,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 14852.0,
+                                    "total": 13792.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "50": {
-                                    "persen": 9.329648912060119,
+                                    "persen": 9.33629547221348,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 8027.0,
+                                    "total": 7441.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "55": {
-                                    "persen": 5.860232940651192,
+                                    "persen": 5.815579829822535,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 5042.0,
+                                    "total": 4635.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "60": {
-                                    "persen": 4.358562778151918,
+                                    "persen": 4.327494030864709,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 3750.0,
+                                    "total": 3449.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "65": {
-                                    "persen": 2.0142371452099397,
+                                    "persen": 2.0087903576150765,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 1733.0,
+                                    "total": 1601.0,
                                     "total_female": null,
                                     "total_male": null
                                 }
                             },
                             "demography": {
                                 "female": {
-                                    "from": 86038,
-                                    "persen": 49.20267788651526,
-                                    "total": 42333
+                                    "from": 79700,
+                                    "persen": 49.19447929736512,
+                                    "total": 39208
                                 },
                                 "male": {
-                                    "from": 86038,
-                                    "persen": 50.796159836351386,
-                                    "total": 43704
+                                    "from": 79700,
+                                    "persen": 50.80552070263488,
+                                    "total": 40492
                                 },
                                 "total": {
-                                    "from": 738441,
-                                    "persen": 11.651303218537432,
-                                    "total": 86038
+                                    "from": 678284,
+                                    "persen": 11.750240312317555,
+                                    "total": 79700
                                 }
                             },
                             "driving_unit": "time",
@@ -497,19 +511,19 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                             "kecamatan": "KELAPA DUA",
                             "ket": "Gading Serpong",
                             "kodepodes": "3603051002",
-                            "latitude": -692363.677,
-                            "longitude": 11869631.657,
+                            "latitude": -692364.116,
+                            "longitude": 11869664.984,
                             "low": 0,
-                            "luas_m": 22934293760.0,
+                            "luas_m": 21129435130.0,
                             "medium_high": 0,
                             "medium_low": 0,
                             "nama_desa": "CURUG SANGERENG",
                             "provinsi": "BANTEN",
                             "ses": {
-                                "high": 71.517,
+                                "high": 75.655,
                                 "low": 0,
-                                "medium_high": 23.511,
-                                "medium_low": 4.971
+                                "medium_high": 20.412,
+                                "medium_low": 3.933
                             },
                             "tipe_driving": "driving-car",
                             "zone": [
@@ -528,160 +542,144 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                             "coordinates": [
                                 [
                                     [
-                                        106.555559,
-                                        -6.218546
+                                        106.559254,
+                                        -6.220331
                                     ],
                                     [
-                                        106.557229,
-                                        -6.215356
+                                        106.560485,
+                                        -6.216948
                                     ],
                                     [
-                                        106.56481,
-                                        -6.216431
+                                        106.562684,
+                                        -6.217748
                                     ],
                                     [
-                                        106.564919,
-                                        -6.216457
+                                        106.567775,
+                                        -6.219121
                                     ],
                                     [
                                         106.575179,
                                         -6.219864
                                     ],
                                     [
-                                        106.586741,
-                                        -6.222456
+                                        106.586749,
+                                        -6.222447
                                     ],
                                     [
-                                        106.59295,
-                                        -6.218019
+                                        106.587174,
+                                        -6.222281
                                     ],
                                     [
-                                        106.59477,
-                                        -6.214534
+                                        106.594856,
+                                        -6.216075
                                     ],
                                     [
-                                        106.598088,
-                                        -6.205778
+                                        106.598265,
+                                        -6.212234
                                     ],
                                     [
-                                        106.598121,
-                                        -6.20539
+                                        106.598529,
+                                        -6.204077
                                     ],
                                     [
-                                        106.598177,
-                                        -6.204016
-                                    ],
-                                    [
-                                        106.598197,
+                                        106.598567,
                                         -6.203687
                                     ],
                                     [
-                                        106.598412,
-                                        -6.201954
+                                        106.598609,
+                                        -6.203273
                                     ],
                                     [
-                                        106.599467,
-                                        -6.200032
+                                        106.598685,
+                                        -6.202463
                                     ],
                                     [
-                                        106.599584,
-                                        -6.199887
+                                        106.600463,
+                                        -6.20201
                                     ],
                                     [
-                                        106.601923,
-                                        -6.199697
+                                        106.601955,
+                                        -6.201549
                                     ],
                                     [
-                                        106.60879,
-                                        -6.190969
+                                        106.604564,
+                                        -6.200516
                                     ],
                                     [
-                                        106.608797,
-                                        -6.190752
+                                        106.609412,
+                                        -6.189723
                                     ],
                                     [
-                                        106.60777,
-                                        -6.186006
+                                        106.609413,
+                                        -6.189691
                                     ],
                                     [
-                                        106.607766,
-                                        -6.185882
+                                        106.609414,
+                                        -6.189663
                                     ],
                                     [
-                                        106.609228,
-                                        -6.184053
+                                        106.609416,
+                                        -6.18963
                                     ],
                                     [
-                                        106.609419,
-                                        -6.184037
+                                        106.611382,
+                                        -6.184979
                                     ],
                                     [
-                                        106.612319,
-                                        -6.18366
+                                        106.612906,
+                                        -6.183567
                                     ],
                                     [
-                                        106.620274,
-                                        -6.178704
+                                        106.621061,
+                                        -6.18038
                                     ],
                                     [
-                                        106.620498,
-                                        -6.178424
+                                        106.623743,
+                                        -6.176726
                                     ],
                                     [
-                                        106.625253,
-                                        -6.172927
+                                        106.623953,
+                                        -6.176635
                                     ],
                                     [
-                                        106.625508,
-                                        -6.172871
+                                        106.62818,
+                                        -6.175788
                                     ],
                                     [
-                                        106.634804,
-                                        -6.173683
+                                        106.635083,
+                                        -6.175596
                                     ],
                                     [
-                                        106.642306,
-                                        -6.177915
+                                        106.637997,
+                                        -6.176168
                                     ],
                                     [
-                                        106.645843,
-                                        -6.178584
+                                        106.645453,
+                                        -6.180708
                                     ],
                                     [
-                                        106.649749,
-                                        -6.183226
+                                        106.64762,
+                                        -6.182825
                                     ],
                                     [
-                                        106.650838,
-                                        -6.184859
+                                        106.647157,
+                                        -6.187436
                                     ],
                                     [
-                                        106.650842,
-                                        -6.184906
+                                        106.647024,
+                                        -6.187848
                                     ],
                                     [
-                                        106.650835,
-                                        -6.185195
+                                        106.645877,
+                                        -6.197808
                                     ],
                                     [
-                                        106.650807,
-                                        -6.185321
+                                        106.644537,
+                                        -6.202196
                                     ],
                                     [
-                                        106.64913,
-                                        -6.186773
-                                    ],
-                                    [
-                                        106.646174,
-                                        -6.198016
-                                    ],
-                                    [
-                                        106.648788,
-                                        -6.209675
-                                    ],
-                                    [
-                                        106.650106,
-                                        -6.21129
+                                        106.649484,
+                                        -6.212868
                                     ],
                                     [
                                         106.659641,
@@ -712,24 +710,20 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                                         -6.208982
                                     ],
                                     [
-                                        106.70004,
-                                        -6.204266
+                                        106.69973,
+                                        -6.204658
                                     ],
                                     [
-                                        106.701147,
-                                        -6.203384
+                                        106.701971,
+                                        -6.207476
                                     ],
                                     [
-                                        106.702033,
-                                        -6.20284
+                                        106.70124,
+                                        -6.208056
                                     ],
                                     [
-                                        106.704263,
-                                        -6.205666
-                                    ],
-                                    [
-                                        106.702059,
-                                        -6.207405
+                                        106.699446,
+                                        -6.209376
                                     ],
                                     [
                                         106.693093,
@@ -760,316 +754,376 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                                         -6.23651
                                     ],
                                     [
-                                        106.671199,
-                                        -6.241326
+                                        106.672063,
+                                        -6.23946
                                     ],
                                     [
-                                        106.670846,
-                                        -6.242001
+                                        106.671357,
+                                        -6.240986
                                     ],
                                     [
-                                        106.669665,
-                                        -6.243947
+                                        106.661847,
+                                        -6.245863
                                     ],
                                     [
-                                        106.660513,
-                                        -6.251135
+                                        106.661216,
+                                        -6.249799
                                     ],
                                     [
-                                        106.659946,
-                                        -6.257736
+                                        106.660982,
+                                        -6.250171
                                     ],
                                     [
-                                        106.658525,
-                                        -6.265175
+                                        106.657183,
+                                        -6.259646
                                     ],
                                     [
-                                        106.658523,
-                                        -6.26523
+                                        106.657094,
+                                        -6.262209
                                     ],
                                     [
-                                        106.659392,
-                                        -6.273812
+                                        106.657056,
+                                        -6.262552
                                     ],
                                     [
-                                        106.664056,
-                                        -6.277214
+                                        106.656726,
+                                        -6.26686
                                     ],
                                     [
-                                        106.664092,
-                                        -6.277238
+                                        106.659335,
+                                        -6.274176
                                     ],
                                     [
-                                        106.667806,
-                                        -6.281852
+                                        106.663607,
+                                        -6.277729
                                     ],
                                     [
-                                        106.668144,
-                                        -6.285436
+                                        106.663662,
+                                        -6.277776
                                     ],
                                     [
-                                        106.667538,
-                                        -6.286188
+                                        106.664635,
+                                        -6.278988
                                     ],
                                     [
-                                        106.666586,
-                                        -6.297645
+                                        106.666512,
+                                        -6.282105
                                     ],
                                     [
-                                        106.668123,
-                                        -6.299339
+                                        106.665897,
+                                        -6.283421
                                     ],
                                     [
-                                        106.668122,
-                                        -6.299401
+                                        106.6647,
+                                        -6.285216
                                     ],
                                     [
-                                        106.66672,
-                                        -6.301242
+                                        106.664377,
+                                        -6.285028
                                     ],
                                     [
-                                        106.664798,
-                                        -6.302585
+                                        106.657113,
+                                        -6.284568
                                     ],
                                     [
-                                        106.655707,
-                                        -6.310409
+                                        106.653431,
+                                        -6.291243
                                     ],
                                     [
-                                        106.653708,
-                                        -6.313577
+                                        106.657152,
+                                        -6.296692
                                     ],
                                     [
-                                        106.65002,
-                                        -6.319165
+                                        106.664089,
+                                        -6.297826
                                     ],
                                     [
-                                        106.640778,
-                                        -6.324319
+                                        106.664337,
+                                        -6.29782
                                     ],
                                     [
-                                        106.640591,
-                                        -6.324316
+                                        106.665784,
+                                        -6.299281
                                     ],
                                     [
-                                        106.639532,
-                                        -6.322876
+                                        106.665644,
+                                        -6.300467
                                     ],
                                     [
-                                        106.639043,
-                                        -6.322064
+                                        106.66556,
+                                        -6.300699
                                     ],
                                     [
-                                        106.639044,
-                                        -6.322064
+                                        106.664433,
+                                        -6.301418
                                     ],
                                     [
-                                        106.638931,
-                                        -6.311701
+                                        106.663878,
+                                        -6.301657
                                     ],
                                     [
-                                        106.633508,
-                                        -6.309334
+                                        106.656506,
+                                        -6.307201
                                     ],
                                     [
-                                        106.629576,
-                                        -6.310242
+                                        106.655195,
+                                        -6.311763
                                     ],
                                     [
-                                        106.628087,
-                                        -6.309936
+                                        106.647933,
+                                        -6.319504
                                     ],
                                     [
-                                        106.622964,
-                                        -6.301099
+                                        106.643508,
+                                        -6.32181
                                     ],
                                     [
-                                        106.619474,
-                                        -6.300215
+                                        106.641986,
+                                        -6.320858
                                     ],
                                     [
-                                        106.619405,
-                                        -6.297255
+                                        106.640482,
+                                        -6.31986
                                     ],
                                     [
-                                        106.617338,
-                                        -6.29214
+                                        106.639552,
+                                        -6.311926
                                     ],
                                     [
-                                        106.616977,
-                                        -6.289171
+                                        106.631567,
+                                        -6.310345
                                     ],
                                     [
-                                        106.615202,
-                                        -6.283329
+                                        106.630308,
+                                        -6.310365
                                     ],
                                     [
-                                        106.60464,
-                                        -6.287401
+                                        106.629754,
+                                        -6.310273
                                     ],
                                     [
-                                        106.604497,
-                                        -6.287894
+                                        106.630344,
+                                        -6.306722
                                     ],
                                     [
-                                        106.59669,
-                                        -6.296168
+                                        106.621498,
+                                        -6.30052
                                     ],
                                     [
-                                        106.596495,
-                                        -6.296623
+                                        106.621496,
+                                        -6.30052
                                     ],
                                     [
-                                        106.596228,
-                                        -6.297087
+                                        106.619629,
+                                        -6.29931
                                     ],
                                     [
-                                        106.594654,
-                                        -6.303103
+                                        106.619619,
+                                        -6.298755
                                     ],
                                     [
-                                        106.593695,
-                                        -6.304606
+                                        106.616567,
+                                        -6.290512
                                     ],
                                     [
-                                        106.591119,
-                                        -6.307098
+                                        106.616568,
+                                        -6.290429
                                     ],
                                     [
-                                        106.584009,
-                                        -6.3036
+                                        106.613749,
+                                        -6.28225
                                     ],
                                     [
-                                        106.582774,
-                                        -6.300281
+                                        106.604193,
+                                        -6.287048
                                     ],
                                     [
-                                        106.582738,
-                                        -6.3001
+                                        106.603972,
+                                        -6.28735
                                     ],
                                     [
-                                        106.582208,
-                                        -6.295302
+                                        106.597658,
+                                        -6.293562
                                     ],
                                     [
-                                        106.582211,
-                                        -6.295293
+                                        106.596398,
+                                        -6.296612
                                     ],
                                     [
-                                        106.587752,
-                                        -6.287653
+                                        106.596376,
+                                        -6.296662
                                     ],
                                     [
-                                        106.587687,
-                                        -6.284301
+                                        106.592978,
+                                        -6.303744
                                     ],
                                     [
-                                        106.587691,
-                                        -6.283627
+                                        106.592034,
+                                        -6.305232
                                     ],
                                     [
-                                        106.587761,
-                                        -6.28088
+                                        106.591769,
+                                        -6.305331
                                     ],
                                     [
-                                        106.588099,
-                                        -6.278644
+                                        106.59176,
+                                        -6.305335
                                     ],
                                     [
-                                        106.588561,
-                                        -6.270439
+                                        106.591394,
+                                        -6.30547
                                     ],
                                     [
-                                        106.585772,
-                                        -6.266667
+                                        106.585741,
+                                        -6.302543
                                     ],
                                     [
-                                        106.582965,
-                                        -6.264996
+                                        106.584829,
+                                        -6.300264
                                     ],
                                     [
-                                        106.581327,
-                                        -6.263584
+                                        106.584187,
+                                        -6.296899
                                     ],
                                     [
-                                        106.574229,
-                                        -6.259537
+                                        106.584186,
+                                        -6.296878
                                     ],
                                     [
-                                        106.573515,
-                                        -6.25827
+                                        106.584761,
+                                        -6.296335
                                     ],
                                     [
-                                        106.573532,
-                                        -6.257892
+                                        106.588368,
+                                        -6.287795
                                     ],
                                     [
-                                        106.574961,
-                                        -6.256012
+                                        106.5878,
+                                        -6.284005
                                     ],
                                     [
-                                        106.575169,
-                                        -6.256055
+                                        106.587782,
+                                        -6.283397
                                     ],
                                     [
-                                        106.576797,
-                                        -6.256289
+                                        106.587949,
+                                        -6.282431
                                     ],
                                     [
-                                        106.582765,
-                                        -6.256515
+                                        106.589052,
+                                        -6.278524
                                     ],
                                     [
-                                        106.583007,
-                                        -6.25655
+                                        106.586136,
+                                        -6.267972
                                     ],
                                     [
-                                        106.5885,
-                                        -6.256264
+                                        106.581807,
+                                        -6.262813
                                     ],
                                     [
-                                        106.593299,
-                                        -6.251746
+                                        106.57569,
+                                        -6.260089
                                     ],
                                     [
-                                        106.595036,
-                                        -6.249953
+                                        106.575636,
+                                        -6.260065
                                     ],
                                     [
-                                        106.59308,
-                                        -6.238876
+                                        106.574824,
+                                        -6.257663
                                     ],
                                     [
-                                        106.586011,
-                                        -6.238914
+                                        106.574912,
+                                        -6.257481
                                     ],
                                     [
-                                        106.58368,
-                                        -6.240748
+                                        106.577137,
+                                        -6.256793
                                     ],
                                     [
-                                        106.582385,
-                                        -6.240703
+                                        106.577191,
+                                        -6.256817
                                     ],
                                     [
-                                        106.582194,
-                                        -6.240625
+                                        106.580958,
+                                        -6.258169
                                     ],
                                     [
-                                        106.580649,
-                                        -6.238806
+                                        106.58769,
+                                        -6.257526
                                     ],
                                     [
-                                        106.580898,
-                                        -6.238417
+                                        106.589883,
+                                        -6.25615
                                     ],
                                     [
-                                        106.583441,
-                                        -6.234442
+                                        106.594244,
+                                        -6.251778
                                     ],
                                     [
-                                        106.584859,
-                                        -6.229136
+                                        106.596367,
+                                        -6.248359
+                                    ],
+                                    [
+                                        106.595537,
+                                        -6.23764
+                                    ],
+                                    [
+                                        106.589747,
+                                        -6.236779
+                                    ],
+                                    [
+                                        106.587365,
+                                        -6.237528
+                                    ],
+                                    [
+                                        106.584733,
+                                        -6.23903
+                                    ],
+                                    [
+                                        106.582704,
+                                        -6.239294
+                                    ],
+                                    [
+                                        106.58218,
+                                        -6.239234
+                                    ],
+                                    [
+                                        106.582119,
+                                        -6.239174
+                                    ],
+                                    [
+                                        106.581614,
+                                        -6.237233
+                                    ],
+                                    [
+                                        106.582372,
+                                        -6.235461
+                                    ],
+                                    [
+                                        106.583019,
+                                        -6.234714
+                                    ],
+                                    [
+                                        106.585321,
+                                        -6.229386
+                                    ],
+                                    [
+                                        106.585324,
+                                        -6.229343
+                                    ],
+                                    [
+                                        106.585325,
+                                        -6.229335
+                                    ],
+                                    [
+                                        106.585328,
+                                        -6.229293
+                                    ],
+                                    [
+                                        106.586732,
+                                        -6.224733
                                     ],
                                     [
                                         106.574837,
@@ -1084,182 +1138,174 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                                         -6.221131
                                     ],
                                     [
-                                        106.557013,
-                                        -6.219307
-                                    ],
-                                    [
-                                        106.555559,
-                                        -6.218546
+                                        106.559254,
+                                        -6.220331
                                     ]
                                 ],
                                 [
                                     [
-                                        106.603792,
-                                        -6.260451
+                                        106.60447,
+                                        -6.258654
                                     ],
                                     [
-                                        106.604797,
-                                        -6.262868
+                                        106.605654,
+                                        -6.260584
                                     ],
                                     [
-                                        106.604878,
-                                        -6.263026
+                                        106.605748,
+                                        -6.260634
                                     ],
                                     [
-                                        106.605092,
-                                        -6.263088
+                                        106.606156,
+                                        -6.260761
                                     ],
                                     [
-                                        106.606919,
-                                        -6.262236
+                                        106.615007,
+                                        -6.26853
                                     ],
                                     [
-                                        106.614598,
-                                        -6.27058
+                                        106.614677,
+                                        -6.270178
                                     ],
                                     [
-                                        106.614329,
-                                        -6.271709
+                                        106.616797,
+                                        -6.270683
                                     ],
                                     [
-                                        106.617831,
-                                        -6.272543
+                                        106.618207,
+                                        -6.270885
                                     ],
                                     [
-                                        106.620957,
-                                        -6.269979
+                                        106.620435,
+                                        -6.26988
                                     ],
                                     [
-                                        106.630432,
-                                        -6.27289
+                                        106.628816,
+                                        -6.270714
                                     ],
                                     [
-                                        106.632525,
-                                        -6.275587
+                                        106.632293,
+                                        -6.276081
                                     ],
                                     [
-                                        106.63356,
-                                        -6.277951
+                                        106.632782,
+                                        -6.276809
                                     ],
                                     [
-                                        106.633715,
-                                        -6.278237
+                                        106.63533,
+                                        -6.275316
                                     ],
                                     [
-                                        106.635616,
-                                        -6.278154
+                                        106.644726,
+                                        -6.272159
                                     ],
                                     [
-                                        106.645581,
-                                        -6.274525
+                                        106.644787,
+                                        -6.272131
                                     ],
                                     [
-                                        106.645602,
-                                        -6.274481
+                                        106.645797,
+                                        -6.271642
                                     ],
                                     [
-                                        106.646093,
-                                        -6.270127
+                                        106.647189,
+                                        -6.260136
                                     ],
                                     [
-                                        106.647225,
-                                        -6.260546
+                                        106.647137,
+                                        -6.259356
                                     ],
                                     [
-                                        106.647198,
-                                        -6.260286
+                                        106.645981,
+                                        -6.249904
                                     ],
                                     [
-                                        106.646001,
-                                        -6.249967
+                                        106.644864,
+                                        -6.244708
                                     ],
                                     [
-                                        106.644837,
-                                        -6.244053
+                                        106.643074,
+                                        -6.242228
                                     ],
                                     [
-                                        106.643294,
-                                        -6.242192
+                                        106.640089,
+                                        -6.230711
                                     ],
                                     [
-                                        106.642191,
-                                        -6.241536
+                                        106.639518,
+                                        -6.225113
                                     ],
                                     [
-                                        106.640543,
-                                        -6.23049
+                                        106.633037,
+                                        -6.216375
                                     ],
                                     [
-                                        106.641493,
-                                        -6.227336
+                                        106.632952,
+                                        -6.216272
                                     ],
                                     [
-                                        106.635275,
-                                        -6.218309
+                                        106.630736,
+                                        -6.216136
                                     ],
                                     [
-                                        106.631517,
-                                        -6.214469
+                                        106.630582,
+                                        -6.216239
                                     ],
                                     [
-                                        106.6294,
-                                        -6.214364
+                                        106.630389,
+                                        -6.217494
                                     ],
                                     [
-                                        106.629273,
-                                        -6.214442
+                                        106.630175,
+                                        -6.218563
                                     ],
                                     [
-                                        106.628697,
-                                        -6.216707
+                                        106.62439,
+                                        -6.229074
                                     ],
                                     [
-                                        106.629751,
-                                        -6.218825
+                                        106.624152,
+                                        -6.22909
                                     ],
                                     [
-                                        106.630046,
-                                        -6.219998
+                                        106.61782,
+                                        -6.226254
                                     ],
                                     [
-                                        106.629509,
-                                        -6.224404
+                                        106.616326,
+                                        -6.226006
                                     ],
                                     [
-                                        106.618055,
-                                        -6.22399
+                                        106.615989,
+                                        -6.225967
                                     ],
                                     [
-                                        106.61447,
-                                        -6.223666
+                                        106.614234,
+                                        -6.225935
                                     ],
                                     [
-                                        106.611787,
-                                        -6.22585
+                                        106.613268,
+                                        -6.226371
                                     ],
                                     [
-                                        106.609044,
-                                        -6.233232
+                                        106.60895,
+                                        -6.234161
                                     ],
                                     [
-                                        106.606484,
-                                        -6.242779
+                                        106.607563,
+                                        -6.242254
                                     ],
                                     [
-                                        106.6055,
-                                        -6.247461
+                                        106.605566,
+                                        -6.250803
                                     ],
                                     [
-                                        106.605422,
-                                        -6.247857
+                                        106.605525,
+                                        -6.25099
                                     ],
                                     [
-                                        106.604879,
-                                        -6.252854
-                                    ],
-                                    [
-                                        106.603792,
-                                        -6.260451
+                                        106.60447,
+                                        -6.258654
                                     ]
                                 ]
                             ],
@@ -1267,136 +1313,136 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                         },
                         "id": "0",
                         "properties": {
-                            "Household": "243,551",
+                            "Household": "223,714",
                             "age": {
                                 "0": {
-                                    "persen": 15.329185588744885,
+                                    "persen": 15.374385804710574,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 113197.0,
+                                    "total": 104282.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "10": {
-                                    "persen": 15.82915778936545,
+                                    "persen": 15.805178801789307,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 116889.0,
+                                    "total": 107204.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "15": {
-                                    "persen": 15.940067115559447,
+                                    "persen": 15.915014798648874,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 117708.0,
+                                    "total": 107949.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "20": {
-                                    "persen": 17.322574210937386,
+                                    "persen": 17.340229002194423,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 127917.0,
+                                    "total": 117616.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "25": {
-                                    "persen": 17.955529266652587,
+                                    "persen": 18.011481745418063,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 132591.0,
+                                    "total": 122169.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "30": {
-                                    "persen": 18.584150868841284,
+                                    "persen": 18.636883488610387,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 137233.0,
+                                    "total": 126411.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "35": {
-                                    "persen": 18.510346738467987,
+                                    "persen": 18.523066858307587,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 136688.0,
+                                    "total": 125639.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "40": {
-                                    "persen": 16.554740414209704,
+                                    "persen": 16.516680172050073,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 122247.0,
+                                    "total": 112030.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "45": {
-                                    "persen": 13.5872726915124,
+                                    "persen": 13.53651260088324,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 100334.0,
+                                    "total": 91816.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "5": {
-                                    "persen": 16.292295635010717,
+                                    "persen": 16.292880114019436,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 120309.0,
+                                    "total": 110512.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "50": {
-                                    "persen": 10.024632211034115,
+                                    "persen": 9.99772946984943,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 74026.0,
+                                    "total": 67813.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "55": {
-                                    "persen": 7.121760029966284,
+                                    "persen": 7.117077734763414,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 52590.0,
+                                    "total": 48274.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "60": {
-                                    "persen": 5.567268997755161,
+                                    "persen": 5.5485607272614885,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 41111.0,
+                                    "total": 37635.0,
                                     "total_female": null,
                                     "total_male": null
                                 },
                                 "65": {
-                                    "persen": 2.6030513652027363,
+                                    "persen": 2.5863797220233367,
                                     "persen_female": null,
                                     "persen_male": null,
-                                    "total": 19222.0,
+                                    "total": 17543.0,
                                     "total_female": null,
                                     "total_male": null
                                 }
                             },
                             "demography": {
                                 "female": {
-                                    "from": 738441,
-                                    "persen": 49.486282587234456,
-                                    "total": 365427
+                                    "from": 678284,
+                                    "persen": 49.479126737472804,
+                                    "total": 335609
                                 },
                                 "male": {
-                                    "from": 738441,
-                                    "persen": 50.513717412765544,
-                                    "total": 373014
+                                    "from": 678284,
+                                    "persen": 50.520873262527196,
+                                    "total": 342675
                                 },
                                 "total": {
-                                    "from": 738441,
+                                    "from": 678284,
                                     "persen": 100.0,
-                                    "total": 738441
+                                    "total": 678284
                                 }
                             },
                             "driving_unit": "time",
@@ -1406,31 +1452,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                             "kecamatan": "KELAPA DUA",
                             "ket": "Gading Serpong",
                             "kodepodes": "3603051002",
-                            "latitude": -692127.938,
-                            "longitude": 11869774.187,
+                            "latitude": -692079.361,
+                            "longitude": 11869767.295,
                             "low": 0,
-                            "luas_m": 112312742480.0,
+                            "luas_m": 103961906530.0,
                             "medium_high": 0,
                             "medium_low": 0,
                             "nama_desa": "CURUG SANGERENG",
                             "poi": {
-                                "Office Building": {
-                                    "kode_sub_kategori": "2603",
-                                    "min_dist": 2113.17143696,
-                                    "tot": 4
-                                },
                                 "Store": {
                                     "kode_sub_kategori": "1610",
-                                    "min_dist": 2113.17143696,
-                                    "tot": 110
+                                    "min_dist": 2038.42191309,
+                                    "tot": 41
                                 }
                             },
                             "provinsi": "BANTEN",
                             "ses": {
-                                "high": 35.461999999999996,
-                                "low": 4.760999999999999,
-                                "medium_high": 23.215000000000003,
-                                "medium_low": 36.561
+                                "high": 36.348,
+                                "low": 4.832,
+                                "medium_high": 22.845999999999997,
+                                "medium_low": 35.977
                             },
                             "tipe_driving": "driving-car",
                             "zone": [
@@ -1443,615 +1484,801 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                 "type": "FeatureCollection"
             }
         },
-        "batas_informal": {
-            "features": [
-                {
-                    "geometry": {
-                        "coordinates": [
-                            [
+        "informal": {
+            "informal": [
+                "CBD Karawaci A",
+                "CBD Gading Serpong"
+            ],
+            "kab_kot": "TANGERANG",
+            "kecamatan": "KELAPA DUA",
+            "polygon": {
+                "features": [
+                    {
+                        "geometry": {
+                            "coordinates": [
                                 [
                                     [
-                                        106.63227389042777,
-                                        -6.226384583681465
-                                    ],
-                                    [
-                                        106.63480358632978,
-                                        -6.227359584297687
-                                    ],
-                                    [
-                                        106.63733329099864,
-                                        -6.228334572882147
-                                    ],
-                                    [
-                                        106.63691642285471,
-                                        -6.229417740636052
-                                    ],
-                                    [
-                                        106.63579827956704,
-                                        -6.232629667525032
-                                    ],
-                                    [
-                                        106.63578569445434,
-                                        -6.232665029767247
-                                    ],
-                                    [
-                                        106.63577094197547,
-                                        -6.232704629614886
-                                    ],
-                                    [
-                                        106.63446262804791,
-                                        -6.236134545872574
-                                    ],
-                                    [
-                                        106.63318334603457,
-                                        -6.23975670480803
-                                    ],
-                                    [
-                                        106.63317480337452,
-                                        -6.239780536842261
-                                    ],
-                                    [
-                                        106.63314600708276,
-                                        -6.239856179718856
-                                    ],
-                                    [
-                                        106.63263491786734,
-                                        -6.241140765933551
-                                    ],
-                                    [
-                                        106.63259700514783,
-                                        -6.241231259314986
-                                    ],
-                                    [
-                                        106.63255584677495,
-                                        -6.241320320975944
-                                    ],
-                                    [
-                                        106.63251149670839,
-                                        -6.241407834903612
-                                    ],
-                                    [
-                                        106.63246401250427,
-                                        -6.241493686884098
-                                    ],
-                                    [
-                                        106.63240265445904,
-                                        -6.24159487230537
-                                    ],
-                                    [
-                                        106.63233694369507,
-                                        -6.241693284217661
-                                    ],
-                                    [
-                                        106.63226700611756,
-                                        -6.24178873376303
-                                    ],
-                                    [
-                                        106.63219297482607,
-                                        -6.241881040177702
-                                    ],
-                                    [
-                                        106.63210503911637,
-                                        -6.241980835247318
-                                    ],
-                                    [
-                                        106.63201991378804,
-                                        -6.242068386047094
-                                    ],
-                                    [
-                                        106.63201932203418,
-                                        -6.242075522167568
-                                    ],
-                                    [
-                                        106.63200620002618,
-                                        -6.242199279672889
-                                    ],
-                                    [
-                                        106.63198741948389,
-                                        -6.242322303331605
-                                    ],
-                                    [
-                                        106.63196707951721,
-                                        -6.24242590792926
-                                    ],
-                                    [
-                                        106.63194272587617,
-                                        -6.242528641083823
-                                    ],
-                                    [
-                                        106.6316242975235,
-                                        -6.243764318568424
-                                    ],
-                                    [
-                                        106.63158851889506,
-                                        -6.243890466471782
-                                    ],
-                                    [
-                                        106.63154668962812,
-                                        -6.244014737490033
-                                    ],
-                                    [
-                                        106.63149943025462,
-                                        -6.244135596480419
-                                    ],
-                                    [
-                                        106.63144644849484,
-                                        -6.244254056079797
-                                    ],
-                                    [
-                                        106.63127480568784,
-                                        -6.244614444101273
-                                    ],
-                                    [
-                                        106.6312269383726,
-                                        -6.244710048329978
-                                    ],
-                                    [
-                                        106.63117534336749,
-                                        -6.244803691137349
-                                    ],
-                                    [
-                                        106.63110845449177,
-                                        -6.244913528036818
-                                    ],
-                                    [
-                                        106.63075731060144,
-                                        -6.245460516389585
-                                    ],
-                                    [
-                                        106.63071765859314,
-                                        -6.245520518257251
-                                    ],
-                                    [
-                                        106.63067643097258,
-                                        -6.245579447233581
-                                    ],
-                                    [
-                                        106.62966272235684,
-                                        -6.246988255003942
-                                    ],
-                                    [
-                                        106.62964582679348,
-                                        -6.247011476398427
-                                    ],
-                                    [
-                                        106.62907301081094,
-                                        -6.247790027587655
-                                    ],
-                                    [
-                                        106.62870250451704,
-                                        -6.248347042481953
-                                    ],
-                                    [
-                                        106.62865603205029,
-                                        -6.248536267934242
-                                    ],
-                                    [
-                                        106.62835009168356,
-                                        -6.250162744914689
-                                    ],
-                                    [
-                                        106.62832744945234,
-                                        -6.250270943249348
-                                    ],
-                                    [
-                                        106.62830042032817,
-                                        -6.250378128947432
-                                    ],
-                                    [
-                                        106.6282690501767,
-                                        -6.250484123043805
-                                    ],
-                                    [
-                                        106.62823339025886,
-                                        -6.250588750170664
-                                    ],
-                                    [
-                                        106.6282206162885,
-                                        -6.250623145641612
-                                    ],
-                                    [
-                                        106.62795856373674,
-                                        -6.251314385250623
-                                    ],
-                                    [
-                                        106.62791019190189,
-                                        -6.251433403328861
-                                    ],
-                                    [
-                                        106.62757899857206,
-                                        -6.252196018531379
-                                    ],
-                                    [
-                                        106.62754730286588,
-                                        -6.252266256482471
-                                    ],
-                                    [
-                                        106.62751362595327,
-                                        -6.252335563635313
-                                    ],
-                                    [
-                                        106.62747799481377,
-                                        -6.252403886030493
-                                    ],
-                                    [
-                                        106.62744043912511,
-                                        -6.252471168809336
-                                    ],
-                                    [
-                                        106.62738534665658,
-                                        -6.252562463486811
-                                    ],
-                                    [
-                                        106.62732671175854,
-                                        -6.252651520651057
-                                    ],
-                                    [
-                                        106.62726462256433,
-                                        -6.252738202705814
-                                    ],
-                                    [
-                                        106.62719917799973,
-                                        -6.252822375652045
-                                    ],
-                                    [
-                                        106.62616043225819,
-                                        -6.254105503166329
-                                    ],
-                                    [
-                                        106.62613065390667,
-                                        -6.25414164512074
-                                    ],
-                                    [
-                                        106.62604185125059,
-                                        -6.254242374585885
-                                    ],
-                                    [
-                                        106.6259481742689,
-                                        -6.2543385813604
-                                    ],
-                                    [
-                                        106.62453054774676,
-                                        -6.255724142555096
-                                    ],
-                                    [
-                                        106.62327724085202,
-                                        -6.257315288769519
-                                    ],
-                                    [
-                                        106.6226758830856,
-                                        -6.258488723275889
-                                    ],
-                                    [
-                                        106.62151321706136,
-                                        -6.26165759422247
-                                    ],
-                                    [
-                                        106.6205246687785,
-                                        -6.264715546385276
-                                    ],
-                                    [
-                                        106.61998034871425,
-                                        -6.266500462326348
-                                    ],
-                                    [
-                                        106.61738735679796,
-                                        -6.265708685314848
-                                    ],
-                                    [
-                                        106.61479437216258,
-                                        -6.264916895598219
-                                    ],
-                                    [
-                                        106.6153453112372,
-                                        -6.26311033297543
-                                    ],
-                                    [
-                                        106.61535887211426,
-                                        -6.263067160121238
-                                    ],
-                                    [
-                                        106.61637067596598,
-                                        -6.259937362019571
-                                    ],
-                                    [
-                                        106.61640256862376,
-                                        -6.259844484535222
-                                    ],
-                                    [
-                                        106.61640518025501,
-                                        -6.259837337622912
-                                    ],
-                                    [
-                                        106.61764316450063,
-                                        -6.256463271063069
-                                    ],
-                                    [
-                                        106.61767283853078,
-                                        -6.256386057970076
-                                    ],
-                                    [
-                                        106.6177048498991,
-                                        -6.256309785568078
-                                    ],
-                                    [
-                                        106.61773917162554,
-                                        -6.256234524903277
-                                    ],
-                                    [
-                                        106.61777577043557,
-                                        -6.256160347022274
-                                    ],
-                                    [
-                                        106.6185728404642,
-                                        -6.254605046885331
-                                    ],
-                                    [
-                                        106.6186373407408,
-                                        -6.254486543219343
-                                    ],
-                                    [
-                                        106.61868761644052,
-                                        -6.254402916161609
-                                    ],
-                                    [
-                                        106.61874086619815,
-                                        -6.254321153398394
-                                    ],
-                                    [
-                                        106.61879701986675,
-                                        -6.254241359251296
-                                    ],
-                                    [
-                                        106.61885600639971,
-                                        -6.254163638940724
-                                    ],
-                                    [
-                                        106.62038128446875,
-                                        -6.252227227704338
-                                    ],
-                                    [
-                                        106.62043367087733,
-                                        -6.252162775091904
-                                    ],
-                                    [
-                                        106.62052247713075,
-                                        -6.252062043828232
-                                    ],
-                                    [
-                                        106.6206161577096,
-                                        -6.251965835255021
-                                    ],
-                                    [
-                                        106.62204678842852,
-                                        -6.25056757293504
-                                    ],
-                                    [
-                                        106.62275362228183,
-                                        -6.249694453536165
-                                    ],
-                                    [
-                                        106.62291196861258,
-                                        -6.249329848593561
-                                    ],
-                                    [
-                                        106.62306614568615,
-                                        -6.248923167969792
-                                    ],
-                                    [
-                                        106.62334150100958,
-                                        -6.247459372951539
-                                    ],
-                                    [
-                                        106.6233562786694,
-                                        -6.247386344404219
-                                    ],
-                                    [
-                                        106.62337305552222,
-                                        -6.247313750229296
-                                    ],
-                                    [
-                                        106.62355046478228,
-                                        -6.246591410265353
-                                    ],
-                                    [
-                                        106.62356890538086,
-                                        -6.246520476238913
-                                    ],
-                                    [
-                                        106.62358925434069,
-                                        -6.246450066517298
-                                    ],
-                                    [
-                                        106.6236114963736,
-                                        -6.246380233261107
-                                    ],
-                                    [
-                                        106.62367848417489,
-                                        -6.246200715990199
-                                    ],
-                                    [
-                                        106.62372612036427,
-                                        -6.246092381857864
-                                    ],
-                                    [
-                                        106.62377843392773,
-                                        -6.245986229480877
-                                    ],
-                                    [
-                                        106.62383532414094,
-                                        -6.245882462105897
-                                    ],
-                                    [
-                                        106.62387966611374,
-                                        -6.245808357069905
-                                    ],
-                                    [
-                                        106.6239263436259,
-                                        -6.245735702640502
-                                    ],
-                                    [
-                                        106.62459516133765,
-                                        -6.244730223720751
-                                    ],
-                                    [
-                                        106.62466881671264,
-                                        -6.244624983256301
-                                    ],
-                                    [
-                                        106.62527116283405,
-                                        -6.243806305216651
-                                    ],
-                                    [
-                                        106.62623449682457,
-                                        -6.242467523157643
-                                    ],
-                                    [
-                                        106.62644295248037,
-                                        -6.24214280854369
-                                    ],
-                                    [
-                                        106.6266351187158,
-                                        -6.2413971257767
-                                    ],
-                                    [
-                                        106.62666586653665,
-                                        -6.241026271445207
-                                    ],
-                                    [
-                                        106.62667898944386,
-                                        -6.240902514839149
-                                    ],
-                                    [
-                                        106.62669777088547,
-                                        -6.240779490281227
-                                    ],
-                                    [
-                                        106.62672084658988,
-                                        -6.240663405791508
-                                    ],
-                                    [
-                                        106.62674895939705,
-                                        -6.240548440058376
-                                    ],
-                                    [
-                                        106.62678205714627,
-                                        -6.240434810717886
-                                    ],
-                                    [
-                                        106.62682007598573,
-                                        -6.240322733607229
-                                    ],
-                                    [
-                                        106.62686294396974,
-                                        -6.240212422765012
-                                    ],
-                                    [
-                                        106.62691058015935,
-                                        -6.240104088632677
-                                    ],
-                                    [
-                                        106.62696289282337,
-                                        -6.239997936255577
-                                    ],
-                                    [
-                                        106.62701978303664,
-                                        -6.239894168880767
-                                    ],
-                                    [
-                                        106.6270274236768,
-                                        -6.239881010000488
-                                    ],
-                                    [
-                                        106.62714618454885,
-                                        -6.239677810882142
-                                    ],
-                                    [
-                                        106.62734985401272,
-                                        -6.239265019365121
-                                    ],
-                                    [
-                                        106.62739012115736,
-                                        -6.239186640750745
-                                    ],
-                                    [
-                                        106.6274329109001,
-                                        -6.239109612918185
-                                    ],
-                                    [
-                                        106.62749426984487,
-                                        -6.239008427496913
-                                    ],
-                                    [
-                                        106.62755998060868,
-                                        -6.238910016483885
-                                    ],
-                                    [
-                                        106.6276299190855,
-                                        -6.238814566938629
-                                    ],
-                                    [
-                                        106.62770395037705,
-                                        -6.23872226142305
-                                    ],
-                                    [
-                                        106.62779188698613,
-                                        -6.238622466353661
-                                    ],
-                                    [
-                                        106.62780754867958,
-                                        -6.238606359495861
-                                    ],
-                                    [
-                                        106.62808913810335,
-                                        -6.237898620924568
-                                    ],
-                                    [
-                                        106.62936201694356,
-                                        -6.234294692146307
-                                    ],
-                                    [
-                                        106.62937056140237,
-                                        -6.234270854715987
-                                    ],
-                                    [
-                                        106.62938531747858,
-                                        -6.234231248573167
-                                    ],
-                                    [
-                                        106.63069148472442,
-                                        -6.2308070430106
-                                    ],
-                                    [
-                                        106.63181098868631,
-                                        -6.227591295801631
-                                    ],
-                                    [
-                                        106.6318235755977,
-                                        -6.227555928163497
-                                    ],
-                                    [
-                                        106.63184122928936,
-                                        -6.227508759621514
-                                    ],
-                                    [
-                                        106.63227389042777,
-                                        -6.226384583681465
+                                        [
+                                            106.60916719990661,
+                                            -6.229383200374286
+                                        ],
+                                        [
+                                            106.60801737979835,
+                                            -6.231839873011666
+                                        ],
+                                        [
+                                            106.60767180630887,
+                                            -6.231677899715237
+                                        ],
+                                        [
+                                            106.60626975514515,
+                                            -6.2310619873208
+                                        ],
+                                        [
+                                            106.60615973658275,
+                                            -6.231010686394029
+                                        ],
+                                        [
+                                            106.6060521228074,
+                                            -6.230954509343064
+                                        ],
+                                        [
+                                            106.60352721051237,
+                                            -6.22956359988018
+                                        ],
+                                        [
+                                            106.60324426401161,
+                                            -6.229422951308095
+                                        ],
+                                        [
+                                            106.60318106235633,
+                                            -6.229397479809791
+                                        ],
+                                        [
+                                            106.60317466907594,
+                                            -6.229396209067772
+                                        ],
+                                        [
+                                            106.60271086171701,
+                                            -6.229327914551504
+                                        ],
+                                        [
+                                            106.60201862745777,
+                                            -6.229251387641398
+                                        ],
+                                        [
+                                            106.60069861604848,
+                                            -6.229136846388258
+                                        ],
+                                        [
+                                            106.60093280040854,
+                                            -6.226434200178176
+                                        ],
+                                        [
+                                            106.60116698117133,
+                                            -6.22373155306866
+                                        ],
+                                        [
+                                            106.60251877462184,
+                                            -6.22384885254246
+                                        ],
+                                        [
+                                            106.60258225686584,
+                                            -6.223855115421202
+                                        ],
+                                        [
+                                            106.60335475291959,
+                                            -6.223940515042614
+                                        ],
+                                        [
+                                            106.6034517241178,
+                                            -6.22395301022317
+                                        ],
+                                        [
+                                            106.60403102061531,
+                                            -6.224038309120601
+                                        ],
+                                        [
+                                            106.60410712844134,
+                                            -6.224050625336019
+                                        ],
+                                        [
+                                            106.60416465087792,
+                                            -6.224061417200573
+                                        ],
+                                        [
+                                            106.60448654971458,
+                                            -6.224125416554671
+                                        ],
+                                        [
+                                            106.60458780258517,
+                                            -6.224147569554646
+                                        ],
+                                        [
+                                            106.60468813544918,
+                                            -6.224173578847513
+                                        ],
+                                        [
+                                            106.60478740081805,
+                                            -6.224203407561106
+                                        ],
+                                        [
+                                            106.6048854547999,
+                                            -6.224237012528022
+                                        ],
+                                        [
+                                            106.60497099381644,
+                                            -6.224269817098275
+                                        ],
+                                        [
+                                            106.60536799233921,
+                                            -6.224429816382838
+                                        ],
+                                        [
+                                            106.60546547345291,
+                                            -6.224471336283102
+                                        ],
+                                        [
+                                            106.60556125934465,
+                                            -6.224516636933174
+                                        ],
+                                        [
+                                            106.60599035826851,
+                                            -6.22472993633744
+                                        ],
+                                        [
+                                            106.60609167319222,
+                                            -6.22478299364019
+                                        ],
+                                        [
+                                            106.60856025285364,
+                                            -6.226142867499277
+                                        ],
+                                        [
+                                            106.6098813290601,
+                                            -6.226723207210171
+                                        ],
+                                        [
+                                            106.60994151079223,
+                                            -6.226750525016655
+                                        ],
+                                        [
+                                            106.61031700922263,
+                                            -6.226926524139742
+                                        ],
+                                        [
+                                            106.60916719990661,
+                                            -6.229383200374286
+                                        ]
                                     ]
                                 ]
-                            ]
-                        ],
-                        "type": "MultiPolygon"
+                            ],
+                            "type": "MultiPolygon"
+                        },
+                        "id": "41",
+                        "properties": {
+                            "ALAMAT": "Jl. Jenderal Sudirman",
+                            "DESA": "KELAPA DUA",
+                            "KABKOT": "TANGERANG",
+                            "KECAMATAN": "KELAPA DUA",
+                            "NAMA": "CBD Karawaci A",
+                            "PROVINSI": "BANTEN"
+                        },
+                        "type": "Feature"
                     },
-                    "id": "53",
-                    "properties": {
-                        "NAMA": "CBD Gading Serpong",
-                        "fid": 54
-                    },
-                    "type": "Feature"
-                }
-            ],
-            "type": "FeatureCollection"
+                    {
+                        "geometry": {
+                            "coordinates": [
+                                [
+                                    [
+                                        [
+                                            106.63227389042777,
+                                            -6.226384583681465
+                                        ],
+                                        [
+                                            106.63480358632978,
+                                            -6.227359584297687
+                                        ],
+                                        [
+                                            106.63733329099864,
+                                            -6.228334572882147
+                                        ],
+                                        [
+                                            106.63691642285471,
+                                            -6.229417740636052
+                                        ],
+                                        [
+                                            106.63579827956704,
+                                            -6.232629667525032
+                                        ],
+                                        [
+                                            106.63578569445434,
+                                            -6.232665029767247
+                                        ],
+                                        [
+                                            106.63577094197547,
+                                            -6.232704629614886
+                                        ],
+                                        [
+                                            106.63446262804791,
+                                            -6.236134545872574
+                                        ],
+                                        [
+                                            106.63318334603457,
+                                            -6.23975670480803
+                                        ],
+                                        [
+                                            106.63317480337452,
+                                            -6.239780536842261
+                                        ],
+                                        [
+                                            106.63314600708276,
+                                            -6.239856179718856
+                                        ],
+                                        [
+                                            106.63263491786734,
+                                            -6.241140765933551
+                                        ],
+                                        [
+                                            106.63259700514783,
+                                            -6.241231259314986
+                                        ],
+                                        [
+                                            106.63255584677495,
+                                            -6.241320320975944
+                                        ],
+                                        [
+                                            106.63251149670839,
+                                            -6.241407834903612
+                                        ],
+                                        [
+                                            106.63246401250427,
+                                            -6.241493686884098
+                                        ],
+                                        [
+                                            106.63240265445904,
+                                            -6.24159487230537
+                                        ],
+                                        [
+                                            106.63233694369507,
+                                            -6.241693284217661
+                                        ],
+                                        [
+                                            106.63226700611756,
+                                            -6.24178873376303
+                                        ],
+                                        [
+                                            106.63219297482607,
+                                            -6.241881040177702
+                                        ],
+                                        [
+                                            106.63210503911637,
+                                            -6.241980835247318
+                                        ],
+                                        [
+                                            106.63201991378804,
+                                            -6.242068386047094
+                                        ],
+                                        [
+                                            106.63201932203418,
+                                            -6.242075522167568
+                                        ],
+                                        [
+                                            106.63200620002618,
+                                            -6.242199279672889
+                                        ],
+                                        [
+                                            106.63198741948389,
+                                            -6.242322303331605
+                                        ],
+                                        [
+                                            106.63196707951721,
+                                            -6.24242590792926
+                                        ],
+                                        [
+                                            106.63194272587617,
+                                            -6.242528641083823
+                                        ],
+                                        [
+                                            106.6316242975235,
+                                            -6.243764318568424
+                                        ],
+                                        [
+                                            106.63158851889506,
+                                            -6.243890466471782
+                                        ],
+                                        [
+                                            106.63154668962812,
+                                            -6.244014737490033
+                                        ],
+                                        [
+                                            106.63149943025462,
+                                            -6.244135596480419
+                                        ],
+                                        [
+                                            106.63144644849484,
+                                            -6.244254056079797
+                                        ],
+                                        [
+                                            106.63127480568784,
+                                            -6.244614444101273
+                                        ],
+                                        [
+                                            106.6312269383726,
+                                            -6.244710048329978
+                                        ],
+                                        [
+                                            106.63117534336749,
+                                            -6.244803691137349
+                                        ],
+                                        [
+                                            106.63110845449177,
+                                            -6.244913528036818
+                                        ],
+                                        [
+                                            106.63075731060144,
+                                            -6.245460516389585
+                                        ],
+                                        [
+                                            106.63071765859314,
+                                            -6.245520518257251
+                                        ],
+                                        [
+                                            106.63067643097258,
+                                            -6.245579447233581
+                                        ],
+                                        [
+                                            106.62966272235684,
+                                            -6.246988255003942
+                                        ],
+                                        [
+                                            106.62964582679348,
+                                            -6.247011476398427
+                                        ],
+                                        [
+                                            106.62907301081094,
+                                            -6.247790027587655
+                                        ],
+                                        [
+                                            106.62870250451704,
+                                            -6.248347042481953
+                                        ],
+                                        [
+                                            106.62865603205029,
+                                            -6.248536267934242
+                                        ],
+                                        [
+                                            106.62835009168356,
+                                            -6.250162744914689
+                                        ],
+                                        [
+                                            106.62832744945234,
+                                            -6.250270943249348
+                                        ],
+                                        [
+                                            106.62830042032817,
+                                            -6.250378128947432
+                                        ],
+                                        [
+                                            106.6282690501767,
+                                            -6.250484123043805
+                                        ],
+                                        [
+                                            106.62823339025886,
+                                            -6.250588750170664
+                                        ],
+                                        [
+                                            106.6282206162885,
+                                            -6.250623145641612
+                                        ],
+                                        [
+                                            106.62795856373674,
+                                            -6.251314385250623
+                                        ],
+                                        [
+                                            106.62791019190189,
+                                            -6.251433403328861
+                                        ],
+                                        [
+                                            106.62757899857206,
+                                            -6.252196018531379
+                                        ],
+                                        [
+                                            106.62754730286588,
+                                            -6.252266256482471
+                                        ],
+                                        [
+                                            106.62751362595327,
+                                            -6.252335563635313
+                                        ],
+                                        [
+                                            106.62747799481377,
+                                            -6.252403886030493
+                                        ],
+                                        [
+                                            106.62744043912511,
+                                            -6.252471168809336
+                                        ],
+                                        [
+                                            106.62738534665658,
+                                            -6.252562463486811
+                                        ],
+                                        [
+                                            106.62732671175854,
+                                            -6.252651520651057
+                                        ],
+                                        [
+                                            106.62726462256433,
+                                            -6.252738202705814
+                                        ],
+                                        [
+                                            106.62719917799973,
+                                            -6.252822375652045
+                                        ],
+                                        [
+                                            106.62616043225819,
+                                            -6.254105503166329
+                                        ],
+                                        [
+                                            106.62613065390667,
+                                            -6.25414164512074
+                                        ],
+                                        [
+                                            106.62604185125059,
+                                            -6.254242374585885
+                                        ],
+                                        [
+                                            106.6259481742689,
+                                            -6.2543385813604
+                                        ],
+                                        [
+                                            106.62453054774676,
+                                            -6.255724142555096
+                                        ],
+                                        [
+                                            106.62327724085202,
+                                            -6.257315288769519
+                                        ],
+                                        [
+                                            106.6226758830856,
+                                            -6.258488723275889
+                                        ],
+                                        [
+                                            106.62151321706136,
+                                            -6.26165759422247
+                                        ],
+                                        [
+                                            106.6205246687785,
+                                            -6.264715546385276
+                                        ],
+                                        [
+                                            106.61998034871425,
+                                            -6.266500462326348
+                                        ],
+                                        [
+                                            106.61738735679796,
+                                            -6.265708685314848
+                                        ],
+                                        [
+                                            106.61479437216258,
+                                            -6.264916895598219
+                                        ],
+                                        [
+                                            106.6153453112372,
+                                            -6.26311033297543
+                                        ],
+                                        [
+                                            106.61535887211426,
+                                            -6.263067160121238
+                                        ],
+                                        [
+                                            106.61637067596598,
+                                            -6.259937362019571
+                                        ],
+                                        [
+                                            106.61640256862376,
+                                            -6.259844484535222
+                                        ],
+                                        [
+                                            106.61640518025501,
+                                            -6.259837337622912
+                                        ],
+                                        [
+                                            106.61764316450063,
+                                            -6.256463271063069
+                                        ],
+                                        [
+                                            106.61767283853078,
+                                            -6.256386057970076
+                                        ],
+                                        [
+                                            106.6177048498991,
+                                            -6.256309785568078
+                                        ],
+                                        [
+                                            106.61773917162554,
+                                            -6.256234524903277
+                                        ],
+                                        [
+                                            106.61777577043557,
+                                            -6.256160347022274
+                                        ],
+                                        [
+                                            106.6185728404642,
+                                            -6.254605046885331
+                                        ],
+                                        [
+                                            106.6186373407408,
+                                            -6.254486543219343
+                                        ],
+                                        [
+                                            106.61868761644052,
+                                            -6.254402916161609
+                                        ],
+                                        [
+                                            106.61874086619815,
+                                            -6.254321153398394
+                                        ],
+                                        [
+                                            106.61879701986675,
+                                            -6.254241359251296
+                                        ],
+                                        [
+                                            106.61885600639971,
+                                            -6.254163638940724
+                                        ],
+                                        [
+                                            106.62038128446875,
+                                            -6.252227227704338
+                                        ],
+                                        [
+                                            106.62043367087733,
+                                            -6.252162775091904
+                                        ],
+                                        [
+                                            106.62052247713075,
+                                            -6.252062043828232
+                                        ],
+                                        [
+                                            106.6206161577096,
+                                            -6.251965835255021
+                                        ],
+                                        [
+                                            106.62204678842852,
+                                            -6.25056757293504
+                                        ],
+                                        [
+                                            106.62275362228183,
+                                            -6.249694453536165
+                                        ],
+                                        [
+                                            106.62291196861258,
+                                            -6.249329848593561
+                                        ],
+                                        [
+                                            106.62306614568615,
+                                            -6.248923167969792
+                                        ],
+                                        [
+                                            106.62334150100958,
+                                            -6.247459372951539
+                                        ],
+                                        [
+                                            106.6233562786694,
+                                            -6.247386344404219
+                                        ],
+                                        [
+                                            106.62337305552222,
+                                            -6.247313750229296
+                                        ],
+                                        [
+                                            106.62355046478228,
+                                            -6.246591410265353
+                                        ],
+                                        [
+                                            106.62356890538086,
+                                            -6.246520476238913
+                                        ],
+                                        [
+                                            106.62358925434069,
+                                            -6.246450066517298
+                                        ],
+                                        [
+                                            106.6236114963736,
+                                            -6.246380233261107
+                                        ],
+                                        [
+                                            106.62367848417489,
+                                            -6.246200715990199
+                                        ],
+                                        [
+                                            106.62372612036427,
+                                            -6.246092381857864
+                                        ],
+                                        [
+                                            106.62377843392773,
+                                            -6.245986229480877
+                                        ],
+                                        [
+                                            106.62383532414094,
+                                            -6.245882462105897
+                                        ],
+                                        [
+                                            106.62387966611374,
+                                            -6.245808357069905
+                                        ],
+                                        [
+                                            106.6239263436259,
+                                            -6.245735702640502
+                                        ],
+                                        [
+                                            106.62459516133765,
+                                            -6.244730223720751
+                                        ],
+                                        [
+                                            106.62466881671264,
+                                            -6.244624983256301
+                                        ],
+                                        [
+                                            106.62527116283405,
+                                            -6.243806305216651
+                                        ],
+                                        [
+                                            106.62623449682457,
+                                            -6.242467523157643
+                                        ],
+                                        [
+                                            106.62644295248037,
+                                            -6.24214280854369
+                                        ],
+                                        [
+                                            106.6266351187158,
+                                            -6.2413971257767
+                                        ],
+                                        [
+                                            106.62666586653665,
+                                            -6.241026271445207
+                                        ],
+                                        [
+                                            106.62667898944386,
+                                            -6.240902514839149
+                                        ],
+                                        [
+                                            106.62669777088547,
+                                            -6.240779490281227
+                                        ],
+                                        [
+                                            106.62672084658988,
+                                            -6.240663405791508
+                                        ],
+                                        [
+                                            106.62674895939705,
+                                            -6.240548440058376
+                                        ],
+                                        [
+                                            106.62678205714627,
+                                            -6.240434810717886
+                                        ],
+                                        [
+                                            106.62682007598573,
+                                            -6.240322733607229
+                                        ],
+                                        [
+                                            106.62686294396974,
+                                            -6.240212422765012
+                                        ],
+                                        [
+                                            106.62691058015935,
+                                            -6.240104088632677
+                                        ],
+                                        [
+                                            106.62696289282337,
+                                            -6.239997936255577
+                                        ],
+                                        [
+                                            106.62701978303664,
+                                            -6.239894168880767
+                                        ],
+                                        [
+                                            106.6270274236768,
+                                            -6.239881010000488
+                                        ],
+                                        [
+                                            106.62714618454885,
+                                            -6.239677810882142
+                                        ],
+                                        [
+                                            106.62734985401272,
+                                            -6.239265019365121
+                                        ],
+                                        [
+                                            106.62739012115736,
+                                            -6.239186640750745
+                                        ],
+                                        [
+                                            106.6274329109001,
+                                            -6.239109612918185
+                                        ],
+                                        [
+                                            106.62749426984487,
+                                            -6.239008427496913
+                                        ],
+                                        [
+                                            106.62755998060868,
+                                            -6.238910016483885
+                                        ],
+                                        [
+                                            106.6276299190855,
+                                            -6.238814566938629
+                                        ],
+                                        [
+                                            106.62770395037705,
+                                            -6.23872226142305
+                                        ],
+                                        [
+                                            106.62779188698613,
+                                            -6.238622466353661
+                                        ],
+                                        [
+                                            106.62780754867958,
+                                            -6.238606359495861
+                                        ],
+                                        [
+                                            106.62808913810335,
+                                            -6.237898620924568
+                                        ],
+                                        [
+                                            106.62936201694356,
+                                            -6.234294692146307
+                                        ],
+                                        [
+                                            106.62937056140237,
+                                            -6.234270854715987
+                                        ],
+                                        [
+                                            106.62938531747858,
+                                            -6.234231248573167
+                                        ],
+                                        [
+                                            106.63069148472442,
+                                            -6.2308070430106
+                                        ],
+                                        [
+                                            106.63181098868631,
+                                            -6.227591295801631
+                                        ],
+                                        [
+                                            106.6318235755977,
+                                            -6.227555928163497
+                                        ],
+                                        [
+                                            106.63184122928936,
+                                            -6.227508759621514
+                                        ],
+                                        [
+                                            106.63227389042777,
+                                            -6.226384583681465
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            "type": "MultiPolygon"
+                        },
+                        "id": "53",
+                        "properties": {
+                            "ALAMAT": "Jl. Gading Serpong",
+                            "DESA": "CURUG SANGERENG",
+                            "KABKOT": "TANGERANG",
+                            "KECAMATAN": "KELAPA DUA",
+                            "NAMA": "CBD Gading Serpong",
+                            "PROVINSI": "BANTEN"
+                        },
+                        "type": "Feature"
+                    }
+                ],
+                "type": "FeatureCollection"
+            },
+            "provinsi": "BANTEN"
         },
         "point": {
             "10": {
@@ -2063,8 +2290,8 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.6621541,
-                                -6.298261840000037
+                                106.65799470000002,
+                                -6.29840045999996
                             ],
                             "type": "Point"
                         },
@@ -2072,17 +2299,17 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                         "properties": {
                             "alamat_merchant": "SMAPAL",
                             "developer_name": null,
-                            "dist": 6877.85379632,
-                            "gid": 2154196,
+                            "dist": 6611.84418378,
+                            "gid": 2154126,
                             "id_brand": 963,
-                            "id_merchant": 1277137.0,
+                            "id_merchant": 1277068.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.29826184,
-                            "longitude": 106.6621541,
+                            "latitude": -6.29840046,
+                            "longitude": 106.6579947,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62739953-LENGKONG GUDANG",
+                            "nama_merchant": "62820738-LENGKONG GUDANG",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2093,8 +2320,8 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.66245290000003,
-                                -6.297878370000016
+                                106.66329130000003,
+                                -6.298010939999972
                             ],
                             "type": "Point"
                         },
@@ -2102,17 +2329,17 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                         "properties": {
                             "alamat_merchant": "SMAPAL",
                             "developer_name": null,
-                            "dist": 6860.52120857,
-                            "gid": 2154363,
+                            "dist": 6881.27460335,
+                            "gid": 2154302,
                             "id_brand": 963,
-                            "id_merchant": 1277304.0,
+                            "id_merchant": 1277245.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.29787837,
-                            "longitude": 106.6624529,
+                            "latitude": -6.29801094,
+                            "longitude": 106.6632913,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62739279-LENGKONG GUDANG",
+                            "nama_merchant": "62736614-LENGKONG GUDANG",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2123,26 +2350,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.66243690000005,
-                                -6.297326610000016
+                                106.66111130000004,
+                                -6.276299950000026
                             ],
                             "type": "Point"
                         },
                         "id": "2",
                         "properties": {
-                            "alamat_merchant": "SMAPAL",
+                            "alamat_merchant": "PAHLAWAN SERIBU",
                             "developer_name": null,
-                            "dist": 6808.58053285,
-                            "gid": 2154558,
+                            "dist": 4875.40561648,
+                            "gid": 2164351,
                             "id_brand": 963,
-                            "id_merchant": 1277501.0,
+                            "id_merchant": 1287308.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.29732661,
-                            "longitude": 106.6624369,
+                            "latitude": -6.27629995,
+                            "longitude": 106.6611113,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62733315-LENGKONG GUDANG",
+                            "nama_merchant": "CNI",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2153,26 +2380,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.66123479999996,
-                                -6.297215990000011
+                                106.65894749999998,
+                                -6.2748886899999645
                             ],
                             "type": "Point"
                         },
                         "id": "3",
                         "properties": {
-                            "alamat_merchant": "SMAPAL",
+                            "alamat_merchant": "PAHLAWAN SERIBU",
                             "developer_name": null,
-                            "dist": 6724.91084658,
-                            "gid": 2154613,
+                            "dist": 4593.47880423,
+                            "gid": 2164941,
                             "id_brand": 963,
-                            "id_merchant": 1277556.0,
+                            "id_merchant": 1287899.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.29721599,
-                            "longitude": 106.6612348,
+                            "latitude": -6.27488869,
+                            "longitude": 106.6589475,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62769445-LENGKONG GUDANG",
+                            "nama_merchant": "ALFAMART",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2183,26 +2410,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.66093459999999,
-                                -6.297138580000001
+                                106.65843730000005,
+                                -6.27457901000001
                             ],
                             "type": "Point"
                         },
                         "id": "4",
                         "properties": {
-                            "alamat_merchant": "SMAPAL",
+                            "alamat_merchant": "PAHLAWAN SERIBU",
                             "developer_name": null,
-                            "dist": 6699.61916971,
-                            "gid": 2154637,
+                            "dist": 4528.84438594,
+                            "gid": 2165065,
                             "id_brand": 963,
-                            "id_merchant": 1277580.0,
+                            "id_merchant": 1288024.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.29713858,
-                            "longitude": 106.6609346,
+                            "latitude": -6.27457901,
+                            "longitude": 106.6584373,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62773134-LENGKONG GUDANG",
+                            "nama_merchant": "CLINDERMA",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2213,26 +2440,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.65829359999996,
-                                -6.29679650000003
+                                106.65741200000004,
+                                -6.273739560000009
                             ],
                             "type": "Point"
                         },
                         "id": "5",
                         "properties": {
-                            "alamat_merchant": "SMAPAL",
+                            "alamat_merchant": "RAYA SERPONG",
                             "developer_name": null,
-                            "dist": 6512.97646996,
-                            "gid": 2154808,
+                            "dist": 4382.39640203,
+                            "gid": 2165502,
                             "id_brand": 963,
-                            "id_merchant": 1277750.0,
+                            "id_merchant": 1288461.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.2967965,
-                            "longitude": 106.6582936,
+                            "latitude": -6.27373956,
+                            "longitude": 106.657412,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62784558-LENGKONG GUDANG",
+                            "nama_merchant": "62393106-LENGKONG KARYA",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2243,26 +2470,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.6606415,
-                                -6.296768009999982
+                                106.65716820000003,
+                                -6.273343820000039
                             ],
                             "type": "Point"
                         },
                         "id": "6",
                         "properties": {
-                            "alamat_merchant": "SMAPAL",
+                            "alamat_merchant": "RAYA SERPONG",
                             "developer_name": null,
-                            "dist": 6647.42745749,
-                            "gid": 2154821,
+                            "dist": 4332.55311099,
+                            "gid": 2165662,
                             "id_brand": 963,
-                            "id_merchant": 1277763.0,
+                            "id_merchant": 1288621.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.29676801,
-                            "longitude": 106.6606415,
+                            "latitude": -6.27334382,
+                            "longitude": 106.6571682,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62773154-LENGKONG GUDANG",
+                            "nama_merchant": "TOKO DUNIA CANTIK",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2273,26 +2500,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.66312170000003,
-                                -6.296767520000031
+                                106.65637549999998,
+                                -6.2720024299999855
                             ],
                             "type": "Point"
                         },
                         "id": "7",
                         "properties": {
-                            "alamat_merchant": "SMAPAL",
+                            "alamat_merchant": "RAYA SERPONG",
                             "developer_name": null,
-                            "dist": 6800.03600002,
-                            "gid": 2154822,
+                            "dist": 4166.65526902,
+                            "gid": 2166254,
                             "id_brand": 963,
-                            "id_merchant": 1277764.0,
+                            "id_merchant": 1289216.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.29676752,
-                            "longitude": 106.6631217,
+                            "latitude": -6.27200243,
+                            "longitude": 106.6563755,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62733064-LENGKONG GUDANG",
+                            "nama_merchant": "INDOMARET",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2303,26 +2530,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.66304159999999,
-                                -6.29673960000003
+                                106.65593129999999,
+                                -6.271381049999998
                             ],
                             "type": "Point"
                         },
                         "id": "8",
                         "properties": {
-                            "alamat_merchant": "SMAPAL",
+                            "alamat_merchant": "RAYA SERPONG",
                             "developer_name": null,
-                            "dist": 6792.43586964,
-                            "gid": 2154833,
+                            "dist": 4083.72947123,
+                            "gid": 2166514,
                             "id_brand": 963,
-                            "id_merchant": 1277775.0,
+                            "id_merchant": 1289476.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.2967396,
-                            "longitude": 106.6630416,
+                            "latitude": -6.27138105,
+                            "longitude": 106.6559313,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62733104-LENGKONG GUDANG",
+                            "nama_merchant": "ALFAMART",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2333,26 +2560,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.66255629999998,
-                                -6.296732759999997
+                                106.6553023,
+                                -6.269832310000019
                             ],
                             "type": "Point"
                         },
                         "id": "9",
                         "properties": {
-                            "alamat_merchant": "SMAPAL",
+                            "alamat_merchant": "RAYA SERPONG",
                             "developer_name": null,
-                            "dist": 6761.37171309,
-                            "gid": 2154836,
+                            "dist": 3916.89510949,
+                            "gid": 2167265,
                             "id_brand": 963,
-                            "id_merchant": 1277778.0,
+                            "id_merchant": 1290226.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.29673276,
-                            "longitude": 106.6625563,
+                            "latitude": -6.26983231,
+                            "longitude": 106.6553023,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62733250-LENGKONG GUDANG",
+                            "nama_merchant": "GIANT EKSTRA",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2363,26 +2590,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.6615004,
-                                -6.296440539999977
+                                106.65558680000001,
+                                -6.269660600000022
                             ],
                             "type": "Point"
                         },
                         "id": "10",
                         "properties": {
-                            "alamat_merchant": "SMAPAL",
+                            "alamat_merchant": "SERPONG RAYA",
                             "developer_name": null,
-                            "dist": 6669.09814369,
-                            "gid": 2154992,
+                            "dist": 3928.03497324,
+                            "gid": 2167351,
                             "id_brand": 963,
-                            "id_merchant": 1277936.0,
+                            "id_merchant": 1290314.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.29644054,
-                            "longitude": 106.6615004,
+                            "latitude": -6.2696606,
+                            "longitude": 106.6555868,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62776505-LENGKONG GUDANG",
+                            "nama_merchant": "BEAUTY CORNER",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
@@ -2393,26 +2620,26 @@ curl --location --request POST 'https://siteprofillingclient.lokasiintelligence.
                     {
                         "geometry": {
                             "coordinates": [
-                                106.65983209999999,
-                                -6.296095370000017
+                                106.65519420000003,
+                                -6.2696509800000255
                             ],
                             "type": "Point"
                         },
                         "id": "11",
                         "properties": {
-                            "alamat_merchant": "SMAPAL",
+                            "alamat_merchant": "SERPONG RAYA",
                             "developer_name": null,
-                            "dist": 6536.1499649,
-                            "gid": 2155129,
+                            "dist": 3894.60972658,
+                            "gid": 2167354,
                             "id_brand": 963,
-                            "id_merchant": 1278074.0,
+                            "id_merchant": 1290317.0,
                             "kode_brand": "1610008",
                             "kode_kategori": "16",
                             "kode_sub_kategori": "1610",
-                            "latitude": -6.29609537,
-                            "longitude": 106.6598321,
+                            "latitude": -6.26965098,
+                            "longitude": 106.6551942,
                             "nama_brand": "UNILEVER",
-                            "nama_merchant": "62780531-LENGKONG GUDANG",
+                            "nama_merchant": "GUARDIAN",
                             "number_of_parking": null,
                             "parking_fees": null,
                             "phone_merchant": null,
